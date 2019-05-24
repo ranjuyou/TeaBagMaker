@@ -45,6 +45,7 @@
             this.CBTea.Name = "CBTea";
             this.CBTea.Size = new System.Drawing.Size(268, 27);
             this.CBTea.TabIndex = 0;
+            this.CBTea.SelectedIndexChanged += new System.EventHandler(this.CBTea_SelectedIndexChanged);
             // 
             // btn
             // 
@@ -53,8 +54,9 @@
             this.btn.Name = "btn";
             this.btn.Size = new System.Drawing.Size(268, 43);
             this.btn.TabIndex = 1;
-            this.btn.Text = "시작";
+            this.btn.Text = "담그기";
             this.btn.UseVisualStyleBackColor = true;
+            this.btn.Click += new System.EventHandler(this.Btn_Click);
             // 
             // label1
             // 
@@ -66,19 +68,21 @@
             this.label1.Size = new System.Drawing.Size(218, 22);
             this.label1.TabIndex = 2;
             this.label1.Text = "맛있는 티 끓이기 ^_^";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // TimerTB
             // 
             this.TimerTB.Font = new System.Drawing.Font("굴림", 14F);
             this.TimerTB.Location = new System.Drawing.Point(12, 156);
             this.TimerTB.Name = "TimerTB";
+            this.TimerTB.ReadOnly = true;
             this.TimerTB.Size = new System.Drawing.Size(268, 29);
             this.TimerTB.TabIndex = 3;
+            this.TimerTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // timer1
             // 
-            this.timer1.Interval = 60000;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.Tick_Count);
             // 
             // Form1
             // 
@@ -92,6 +96,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "TeaBagMaker";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
